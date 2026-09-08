@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-width=1.0">
+    <title>А-020 - Слендермен | Т.Р.И.З.Н.А</title>
+    <style>
+        /* Базовый скелет для темы Wikidot */
+        body { margin: 0; padding: 0; }
+        
+        #container-wrap {
+            width: 100%;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        #header {
+            max-width: 100%;
+            margin: 0 auto;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            padding: 2em 0;
+        }
+
+        #content-wrap {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            padding-top: 20px;
+            width: 100%;
+        }
+
+        #side-bar {
+            width: 17em;
+            padding: 10px;
+        }
+
+        #page-content {
+            flex-grow: 1;
+            padding: 0 30px;
+            max-width: 800px;
+            line-height: 1.6;
+        }
+
+        /* === ИНТЕГРИРОВАННАЯ ТЕМА PENUMBRA === */
+        
+@import url('https://fonts.bunny.net/css2?family=Fira+Code:wght@300..700&display=swap');
+
+@font-face {
+    font-family: 'Josefin Sans';
+    src: url(https://cdn.jsdelivr.net/gh/SYwaves/Webfont-Archive@master/Josefin-Sans.woff2) format("woff2");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Josefin Sans';
+    src: url(https://cdn.jsdelivr.net/gh/SYwaves/Webfont-Archive@master/Josefin-Sans-Italic.woff2) format("woff2");
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Josefin Sans';
+    src: url(https://cdn.jsdelivr.net/gh/SYwaves/Webfont-Archive@master/Josefin-Sans-Bold.woff2) format("woff2");
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Josefin Sans';
+    src: url(https://cdn.jsdelivr.net/gh/SYwaves/Webfont-Archive@master/Josefin-Sans-Bold-Italic.woff2) format("woff2");
+    font-weight: bold;
+    font-style: italic;
+    font-display: swap;
+}
+
+:root {
+  --header-title: "Т.Р.И.З.Н.А";
+  --header-subtitle: "НАЙТИ. ИЗОЛИРОВАТЬ. ПОХОРОНИТЬ";
+
+  --body-font: InterVariable, BlinkMacSystemFont,'Segoe UI',Oxygen,Ubuntu,Cantarell,'Fira Sans','Droid Sans','Helvetica Neue',sans-serif;
+  --header-font: 'Josefin Sans', Verdana, Arial, Helvetica, sans-serif;
+  --mono-font: 'Fira Code', 'Andale Mono', 'Courier New', Courier, monospace;
+
+  --accentColor: #1EB5E8;
+  --darkColor: #2F333C;
+  --darkerColor: #21252E;
+  --lightColor: #EDEDED;
+  --lgurl: url("eye_2.png");
+}
+
+body {
+    font-family: var(--body-font);
+    font-size: .975em;
+    line-height: 1.375;
+    color: var(--lightColor);
+    background-color: var(--darkColor);
+    background-image: linear-gradient(
+        to bottom,
+        var(--darkerColor), var(--darkerColor) 90px,
+        var(--darkerColor) 90px, var(--darkColor) 200px,
+        var(--darkColor) 200px, var(--darkColor) 100%);
+    background-repeat: no-repeat;
+    accent-color: var(--accentColor);
+}
+
+#content-wrap {
+    margin-top: 1.25rem;
+}
+
+input { color-scheme: dark; }
+
+::-webkit-scrollbar {
+  width: .625rem;
+  height: .625rem;
+  background: transparent;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--darkerColor);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--accentColor);
+  border: none;
+}
+
+:root {
+    scrollbar-color: var(--accentColor) var(--darkerColor);
+    scrollbar-width: thin;
+}
+
+div#container-wrap {
+     background-image: none;
+}
+#header {
+    background-image: none;
+    height: 8.75rem;
+}
+
+div#extra-div-1 {
+    height: 220px;
+    width: 100%;
+    top: 0;
+    position: absolute;
+    background: var(--lgurl);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    z-index: -1;
+}
+
+#header h1, #header h2 { margin-left: 0; float: none; text-align: center; }
+#header h2 { margin-top: 0.45rem; }
+#header h1 a {
+    margin: auto;
+    width: max-content;
+}
+#header h1 span, #header h2 span { font-size: 0; display: none; }
+#header h1 a::before, #header h2::before {
+  color: var(--accentColor);
+  font-family: var(--header-font);
+  text-shadow: none;
+}
+#header h1 a::before {
+  content: var(--header-title, "SCP FOUNDATION");
+  font-weight: 700;
+  font-size: min(calc(1.125rem + 2.75vw), 2.875rem);
+}
+#header h2::before {
+  content: var(--header-subtitle, "SECURE - CONTAIN - PROTECT");
+  font-weight: 700;
+  font-size: min(calc(.5rem + 1.75vw), 1.25rem);
+}
+
+div#side-bar {
+    background: var(--darkerColor);
+    clear: both;
+    width: 17rem;
+    padding:0;
+    border-radius: 0;
+    box-shadow: none;
+    overflow-x: hidden;
+}
+
+#side-bar .side-block {
+    border: transparent;
+    border-radius: 0;
+    padding: 5px 15px;
+    box-shadow: none;
+    background-color: transparent;
+}
+
+#side-bar .heading {
+    color: var(--lightColor);
+    font-family: var(--header-font);
+    font-size: 0.94rem;
+    border-bottom: solid 1px var(--lightColor);
+    margin-top: 1.25em;
+}
+
+h1 {
+    color: var(--accentColor);
+    font-family: var(--header-font);
+    font-weight: bold;
+}
+h2, h3, h4, h5, h6 {
+    color: inherit;
+    font-family: var(--header-font);
+    font-weight: bold;
+}
+
+#page-title, .meta-title {
+    color: var(--lightColor);
+    font-family: var(--header-font);
+    font-weight: bold;
+    font-size: 1.75em;
+    text-align: center;
+    border-color: currentColor;
+    margin-bottom: 30px;
+}
+
+a, a.newpage, a:visited, #side-bar a, #side-bar a:visited {
+    color: var(--accentColor);
+    transition: color 0.15s linear;
+    text-decoration: none;
+}
+a:hover, a.newpage:hover, a:visited:hover, #side-bar a:not(.close-menu):hover {
+    color: #ffffff;
+    text-decoration: none;
+    background-color: var(--accentColor);
+}
+
+blockquote, div.blockquote {
+    background-color: var(--darkerColor);
+    border: solid 2px var(--darkColor);
+    box-shadow: -3px 0px 0px -0.1px var(--accentColor);
+    padding: 10px 20px;
+    margin: 20px 0;
+}
+
+
+    </style>
+</head>
+<body>
+    <div id="container-wrap">
+        <div id="extra-div-1"></div>
+        <div id="header">
+            <h1><a href="#"><span>Т.Р.И.З.Н.А</span></a></h1>
+            <h2><span>Обезопасить, Удержать, Сохранить</span></h2>
+        </div>
+
+        <div id="content-wrap">
+            <!-- Боковое меню -->
+            <div id="side-bar">
+                <div class="side-block">
+                    <div class="heading">Управление базой</div>
+                    <a href="#">Главная страница</a><br>
+                    <a href="#">Новые объекты</a><br>
+                    <a href="#">Случайный SCP</a>
+                </div>
+            </div>
+
+            <!-- Основной контент -->
+            <div id="page-content">
+                <div id="page-title">А-020 - Слендермен</div>
+
+                <p><strong>Объект:</strong> А-020</p>
+                <p><strong>Класс объекта:</strong> Евклид</p>
+
+                <p><strong>Особые условия содержания:</strong> А-020 должен располагаться в замкнутой экосистеме на достаточной глубине, не менее 2 км от поверхности земли. При появлении неизвестных “бумажек” в экосистеме А-020, все сотрудники зоны, которые находятся на том же этаже где и замкнутая экосистема, должны покинуть данный этаж в незамедлительном порядке, для предотвращения побега объекта или смерти сотрудников зоны.</p>
+
+                <p><strong>Описание:</strong> Объект является человеко-подобным существом вытянутой формы. Цвет кожи объекта ярко белый, лицо отсутствует, одет в стандартный черный костюм, достигает ростом порядка 3 метров.</p>
+
+                <p>Особенность объекта — создавать “бумажки” в радиусе примерно 20 метров от себя, в которых описываются различные виды предупреждений. При осмотре или взаимодействии с данными “бумажками” А-020 переходит в фазу преследования за человеком, который ранее осматривал или взаимодействовал с “бумажками”. А-020 будет преследовать свою цель пока:<br>
+                А) Цель не соберёт все “бумажки”<br>
+                Б) Цель не будет убита А-020</p>
+
+                <p>А-020 был обнаружен в детском лагере “Радуга” на окраине города Тверь, Россия, в 2023 году. Группа “Альфа” была отправлена на точку с предводителем в лице д-ра Зере, объект был успешно захвачен группой “Альфа” и отправлен в зону 44А для дальнейшего содержания.</p>
+
+                <!-- Блок для логов и интервью -->
+                <blockquote>
+                    <p><strong>Документ #019-Прот1: Транскрипция записи разговора с вожатой детского лагеря “Радуга”</strong></p>
+                    
+                    <p><strong>Д-р Арк:</strong> Вы говорили ранее, что видели человека, но который странно выглядел, это правда?</p>
+                    
+                    <p><strong>Вожатая:</strong> Да, я видела его… Он выглядел как человек, весь белый, у него не было ни глаз ни рта, да в целом лица не было <em>(Пауза)</em></p>
+                    
+                    <p><strong>Д-р Арк:</strong> Что случилось? С вами все хорошо?</p>
+                    
+                    <p><strong>Вожатая:</strong> Да, все хорошо, у меня так уже пару дней… не переживайте. Ой <em>(падает)</em> Опять он, он перед глазами, он не хотел чтобы я его видела, он как будто <strong>[ДАННЫЕ УДАЛЕНЫ]</strong> <em>(отключается)</em></p>
+                    
+                    <p><strong>Д-р Арк:</strong> Проснитесь! Вызовите медика!</p>
+                    
+                    <p><strong>[Конец записи]</strong></p>
+                </blockquote>
+
+                <p><strong>Примечание:</strong> Объект А-020 вызывает зрительные и слуховые галлюцинации у людей, которые видели его, при попытке убить свою цель. Это было выявлено после ряда экспериментов с А-020. Жертвы, которые попали под такого типа влияние, умирали после нескольких дней. Единственный способ предотвратить влияние А-020 и не умереть — это собирание всех “бумажек” объекта А-020.</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
